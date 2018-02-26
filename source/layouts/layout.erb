@@ -5,10 +5,29 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= current_page.data.title || "Middleman" %></title>
-    <%= stylesheet_link_tag "site" %>
-    <%= javascript_include_tag "site" %>
+    <title><%= current_page.data.title || "เล่นกับ Blockly" %></title>
+
+    <%= javascript_include_tag "blockly_compressed.js", :relative => true %>
+    <%= javascript_include_tag "javascript_compressed.js", :relative => true %>
+    <%= javascript_include_tag "blocks_compressed.js", :relative => true %>
+    <% if current_page.data.custom_block_js %>
+      <% current_page.data.custom_block_js.each do |f| %>
+        <%= javascript_include_tag f, :relative => true %>
+      <% end %>
+    <% end %>
+    <%= javascript_include_tag "th.js", :relative => true %>
+    <%= javascript_include_tag "jquery/jquery-3.2.1.min.js", :relative => true %>
+
+    <style>
+      body {
+      background-color: #fff;
+      font-family: sans-serif;
+      }
+      h1 {
+      font-weight: normal;
+      font-size: 140%;
+      }
+    </style>
   </head>
   <body>
     <%= yield %>

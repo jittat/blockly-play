@@ -1,6 +1,6 @@
 var workspace = Blockly.inject(
   'blocklyDiv',
-  { media: '../media/',
+  { media: '../images/media/',
     toolbox: document.getElementById('toolbox'),
     trashcan: true }
 );

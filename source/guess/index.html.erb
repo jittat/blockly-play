@@ -1,51 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Blockly: Guess</title>
-  <script src="../js/blockly_compressed.js"></script>
-  <script src="../js/javascript_compressed.js"></script>
-  <script src="../js/blocks_compressed.js"></script>
-  <script src="../max/js/custom_blocks.js"></script>
-  <script src="../js/th.js"></script>
-  <script src="../js/jquery/jquery-3.2.1.min.js"></script>
-  <script src="../js/acorn_interpreter.js"></script>
-  <style>
-   body {
-       background-color: #fff;
-       font-family: sans-serif;
-   }
-   h1 {
-       font-weight: normal;
-       font-size: 140%;
-   }
-  </style>
-</head>
-<body>
-  <h1>เกมทายเลข</h1>
-  <div style="float: right; border: 1px solid grey; padding: 5px;">
-    <div class="variables" id="var_secret_id" style="display: inline-block; padding-left: 5px; padding-right: 5px;">secret: <span class="variable-values" style="display:none;">0</span><span id="secret_var_placeholder_id">(ซ่อน)</span></div>
-    <button id="secret_toggle_id">แสดงค่าตัวแปร secret</button>
-    <div class="variables" id="var_answer_id" style="display: inline-block; padding-left: 5px; padding-right: 5px;">answer: <span class="variable-values">0</span></div>
-  </div>
-  
-  <p>
-    เขียนโปรแกรมที่สุ่มจำนวนเต็มระหว่าง 1 - 100 มาเป็นคำตอบหนึ่งจำนวน และให้ผู้เล่นทายจำนวนที่เป็นคำตอบ จากนั้นจะให้คำใบ้ว่าจำนวนที่ทายมากกว่าหรือน้อยกว่าคำตอบ หรือตอบว่าเป็นคำตอบที่ถูกต้อง<br />
-    หมายเหตุ: ในการทำซ้ำแบบไม่รู้จบ ให้ใช้ block "Repeat while true"
-  </p>
-  
-  <p>
-    <button onclick="showCode()">Show Code</button>
-    <button onclick="runCode()">Run Code</button>
-  </p>
-  
-  <div style="float:right">
-    โปรแกรมที่ทำงานขณะนี้<br />
-    <pre id="codeDiv">
-    </pre>
-  </div>
-  
-  <div id="blocklyDiv" style="height: 600px; width: 800px;"></div>
+---
+title: "เล่นกับ Blockly: Guess"
+custom_block_js:
+- max/custom_blocks.js
+- acorn_interpreter.js
+---
+<h1>เกมทายเลข</h1>
+<div style="float: right; border: 1px solid grey; padding: 5px;">
+  <div class="variables" id="var_secret_id" style="display: inline-block; padding-left: 5px; padding-right: 5px;">secret: <span class="variable-values" style="display:none;">0</span><span id="secret_var_placeholder_id">(ซ่อน)</span></div>
+  <button id="secret_toggle_id">แสดงค่าตัวแปร secret</button>
+  <div class="variables" id="var_answer_id" style="display: inline-block; padding-left: 5px; padding-right: 5px;">answer: <span class="variable-values">0</span></div>
+</div>
+
+<p>
+  เขียนโปรแกรมที่สุ่มจำนวนเต็มระหว่าง 1 - 100 มาเป็นคำตอบหนึ่งจำนวน และให้ผู้เล่นทายจำนวนที่เป็นคำตอบ จากนั้นจะให้คำใบ้ว่าจำนวนที่ทายมากกว่าหรือน้อยกว่าคำตอบ หรือตอบว่าเป็นคำตอบที่ถูกต้อง<br />
+  หมายเหตุ: ในการทำซ้ำแบบไม่รู้จบ ให้ใช้ block "Repeat while true"
+</p>
+
+<p>
+  <button onclick="showCode()">Show Code</button>
+  <button onclick="runCode()">Run Code</button>
+</p>
+
+<div style="float:right">
+  โปรแกรมที่ทำงานขณะนี้<br />
+  <pre id="codeDiv">
+  </pre>
+</div>
+
+<div id="blocklyDiv" style="height: 600px; width: 800px;"></div>
 
 <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
   <category name="ทำซ้า">
@@ -156,7 +138,5 @@
     <field name="VAR" id="NhG9[(I[m]1cYUCTf,f," variabletype="">secret</field>
   </block>
 </xml>
-  
-  <script src="js/guess.js"></script>
-</body>
-</html>
+
+<%= javascript_include_tag 'guess/guess.js', :relative => true %>
