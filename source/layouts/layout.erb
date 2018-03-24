@@ -18,18 +18,18 @@
     <%= javascript_include_tag "th.js", :relative => true %>
     <%= javascript_include_tag "jquery/jquery-3.2.1.min.js", :relative => true %>
 
-    <style>
-      body {
-      background-color: #fff;
-      font-family: sans-serif;
-      }
-      h1 {
-      font-weight: normal;
-      font-size: 140%;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="<%= url_for 'stylesheets/base.css', :relative => true %>" />
+    <link href="https://fonts.googleapis.com/css?family=Mitr|Trirong:300" rel="stylesheet"> 
   </head>
   <body>
-    <%= yield %>
+    <div class="header">
+      <div class="index-link">
+        <a href="<%= url_for 'index.html', :relative => true %>">สนุกกับ Blockly</a>
+      </div>
+      <div class="header-title"><%= current_page.data.header_title %></div>
+    </div>
+    <div class="content">
+      <%= yield %>
+    </div>
   </body>
 </html>
