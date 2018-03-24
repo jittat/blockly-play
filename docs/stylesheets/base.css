@@ -12,6 +12,7 @@ h2 {
   font-weight: normal;
   font-size: 120%;
   font-family: 'Mitr', sans-serif;
+  margin: 5px 5px 2px 5px;
 }
 .header {
   background: #12418c;
@@ -38,4 +39,35 @@ h2 {
 .content {
   margin-left: 5px;
   margin-right: 5px;
+}
+.task-containers {
+  float: left;
+  width: 150px;
+  border: 1px solid #aaaaaa;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.task-containers a {
+  text-decoration: none;
+}
+.task-containers a .task-content .task-names {
+  color: white;
+  background: #666666;
+  font-weight: bold;
+  font-size: 130%;
+  text-align: center;
+}
+.task-containers a .task-content .thai-titles {
+  padding-left: 2px;
+  color: #333333;
+  background: white;
+}
+.task-containers a:hover .task-content .task-names {
+  background: #7874e0;
+}
+.playground a:hover .task-content .task-names {
+  background: #ffca2c;
+}
+.playground a .task-content .task-names {
+  background: #ffba1c;
 }

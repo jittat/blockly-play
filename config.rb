@@ -5,7 +5,7 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
-activate :livereload
+#activate :livereload
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/
@@ -48,3 +48,4 @@ page '/*.txt', layout: false
 # end
 
 config[:build_dir] = 'docs'
+set :relative_links, true

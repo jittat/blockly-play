@@ -3,17 +3,65 @@ title: เล่นกับ Blockly
 header_title: กิจกรรมฝึกพัฒนาการออกแบบขั้นตอนวิธี
 ---
 <h2>กิจกรรมประกอบหนังสือเรียน</h2>
-<ul>
-  <li><a href="zoo">ลดราคาเข้าสวนสัตว์</a></li>
-  <li><a href="plant">รดน้ำต้นไม้</a></li>
-  <li><a href="max">หาค่าสูงที่สุด</a></li>
-  <li><a href="min">หาค่าต่ำที่สุด</a></li>
-  <li><a href="avr">หาคะแนนเฉลี่ย</a></li>
-  <li><a href="count">นับจำนวนสินค้าที่มีราคาไม่เกิน M บาท</a></li>
-  <li><a href="closest">หาข้อมูลที่มีค่าใกล้เคียงที่สุด</a></li>
-  <li><a href="rank">หาอันดับที่ได้จากการประกวดร้องเพลง</a></li>
-  <li><a href="guess">เกมทายเลข</a></li>
-</ul>
+
+<div style="padding-top: 5px; background: #d2d1ff; padding-bottom: 10px; padding-left: 5px;">
+
+  <% tasks = [
+     {name: 'zoo', thtitle: 'ลดราคาเข้าสวนสัตว์'},
+     {name: 'plant', thtitle: 'รดน้ำต้นไม้'},
+     {name: 'max', thtitle: 'หาค่าสูงที่สุด'},
+     {name: 'min', thtitle: 'หาค่าต่ำที่สุด'},
+     {name: 'avr', thtitle: 'หาคะแนนเฉลี่ย'},
+     {name: 'count', thtitle: 'นับจำนวนสินค้าที่มีราคาไม่เกิน M บาท'},
+     {name: 'closest', thtitle: 'หาข้อมูลที่มีค่าใกล้เคียงที่สุด'},
+     {name: 'rank', thtitle: 'หาอันดับที่ได้จากการประกวดร้องเพลง'},
+     {name: 'guess', thtitle: 'เกมทายเลข'}
+     ] %>
+  
+  <% tasks.each do |t| %>
+    <div class="task-containers">
+      <a href="<%= t[:url] || t[:name] %>">
+        <div class="task-content">
+          <div class="task-names">
+            <%= t[:name] %>
+          </div>
+          <div class="thai-titles">
+            <%= t[:thtitle] %>
+          </div>
+         </div>
+      </a>
+    </div>
+  <% end %>
+  
+  <div style="clear:both;"></div>
+</div>
+
+<h2>สนามเด็กเล่น</h2>
+
+<div style="padding-top: 5px; background: #fff9ad; padding-bottom: 10px; padding-left: 5px;">
+
+  <% tasks = [
+     {name: 'var', url: 'playground-var', thtitle: 'ทดลองเกี่ยวกับตัวแปร'},
+     ] %>
+  
+  <% tasks.each do |t| %>
+    <div class="task-containers playground">
+      <a href="<%= t[:url] || t[:name] %>">
+        <div class="task-content">
+          <div class="task-names">
+            <%= t[:name] %>
+          </div>
+          <div class="thai-titles">
+            <%= t[:thtitle] %>
+          </div>
+         </div>
+      </a>
+    </div>
+  <% end %>
+  
+  <div style="clear:both;"></div>
+</div>
+
 <hr />
 <p>
   <small>
