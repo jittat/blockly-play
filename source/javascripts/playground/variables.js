@@ -32,8 +32,7 @@ function generateCode(forDisplay) {
     MaxCustomBlock.ARRAY_VARIABLE_NAME = 'myArray';
   } else {
     code = 'var myArray = [' + inputArray.join(',') + '];\n' +
-      code + '\n' +
-      'alert("โปรแกรมคืนค่า " + Max);\n';
+      code + '\n';
     
     Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
     Blockly.JavaScript.STATEMENT_PREFIX = null;
